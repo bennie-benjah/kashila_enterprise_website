@@ -14,7 +14,7 @@
 
               We are located at Nairobi Kenya. <a
                 href="https://wa.me/+254717682107?text=Hello%20there!%20I%20Would%20like%20to%20know%20more%20about%20Kashila%20enterprise"
-                target="_blank">For More info click on this link</a>
+                target="_blank" style="color: hsl(5, 100%, 69%);">Forf More info click on this link</a>
             </p>
 
             <button class="btn btn-primary">
