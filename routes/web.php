@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 Route::post('/subscribe', [SubscriberController::class, 'store'])->name('subscribe');
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

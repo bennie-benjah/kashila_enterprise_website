@@ -12,8 +12,13 @@
   -->
     <link rel="shortcut icon" href="./assets/images/logo7.jpg" type="image/svg+xml">
 
+    <head>
+        <!-- Other head elements -->
 
-
+    </head>
+    <!--
+    - custom css link
+  -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <!--
@@ -31,7 +36,6 @@
   -->
     {{-- <link rel="preload" href="./assets/images/hero-banner.png" as="image"> --}}
 @include('home.css');
-
 </head>
 
 <body id="top">
@@ -44,42 +48,6 @@
 
     <main>
         <article>
-
-            <!--
-        - #HERO
-      -->
-
-
-            @include('home.hero')
-            <!--
-        - #COLLECTION
-      -->
-
-            @include('home.collection')
-            <!--
-        - #PRODUCT
-      -->
-
-            @include('home.products')
-            <!--
-        - #CTA
-      -->
-
-            @include('home.cta')
-            <!--
-        - #SPECIAL
-      -->
-
-            @include('home.special')
-            <!--
-        - #SERVICE
-      -->
-
-            @include('home.service')
-
-            <!--
-        - #INSTA POST
-      -->
 
 
 

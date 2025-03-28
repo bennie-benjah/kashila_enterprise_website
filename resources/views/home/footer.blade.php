@@ -198,10 +198,11 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; designed and developed by <a href="#"
+            &copy Kashila Enterprise Limited 2025. All Rights Reserved
+          {{-- &copy; designed and developed by <a href="#"
             class="copyright-link">Alphotech Computer Services</a>&<a href="#"
-            class="copyright-link">MBM technologies</a>. All
-          Rights Reserved
+            class="copyright-link">MBM technologies</a>. All --}}
+
         </p>
 
       </div>

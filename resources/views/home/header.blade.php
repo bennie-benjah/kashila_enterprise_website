@@ -29,10 +29,28 @@
                 <li class="navbar-item"><a href="#service" class="navbar-link">Services</a></li>
                 <li class="navbar-item"><a href="#special" class="navbar-link">Spare Parts</a></li>
                 <li class="navbar-item"><a href="#footer" class="navbar-link">Contact</a></li>
-                <li class="navbar-item"><a href="{{ route('login') }}" class="navbar-link">Log In</a></li>
-                <li class="navbar-item"><a href="{{ route('register') }}" class="navbar-link">Sign Up</a></li>
+
+                @auth
+                <li class="navbar-item">
+                    <a href="{{ route('logout') }}" class="navbar-link logout-link"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                </li>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            @else
+                <li class="navbar-item">
+                    <a href="{{ route('login') }}" class="navbar-link login-link">Log In</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="{{ route('register') }}" class="navbar-link signup-link">Sign Up</a>
+                </li>
+            @endauth
 
             </ul>
+
             <form class="search-bar">
                 <input type="text" class="search-input" placeholder="Search...">
                 <button type="submit" class="search-btn">

@@ -1,7 +1,7 @@
 <section id="special" class="section special">
     <div class="container">
 
-      <div class="special-banner"
+      {{-- <div class="special-banner"
         style="background-image: url('./assets/images/Golf-Course-Riding-Lawn-Mower-30-Inch-at-Lowes-Agricultural-Machinery-Electric-Ride-Lawn-Mower.avif')">
         <h2 class="h3 banner-title">New Trend Edition</h2>
 
@@ -11,7 +11,7 @@
           <ion-icon name="arrow-forward-outline"
             aria-hidden="true"></ion-icon>
         </a>
-      </div>
+      </div> --}}
 
       <div class="special-product">
 

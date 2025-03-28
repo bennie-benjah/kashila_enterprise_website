@@ -178,7 +178,79 @@ body {
   padding: 14px 25px;
   border: 1px solid var(--border-color, var(--bittersweet));
 }
+/* Common button styles */
+.navbar-item .btn1,
+.navbar-item .btn2,
+.navbar-item .btn3 {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    transform: translateY(0);
+    line-height: 1.5;
+    border: 2px solid transparent; /* Prepare all buttons for border */
+}
 
+/* Logout button */
+.navbar-item .btn1 {
+    background-color: #ef4444; /* Red 500 */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-item .btn1:hover {
+    background-color: #dc2626; /* Red 600 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+/* Login button */
+/* Login button */
+.navbar-item .btn2 {
+    background-color: transparent;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+
+.navbar-item .btn2:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+/* Sign Up button */
+.navbar-item .btn3 {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.navbar-item .btn3:hover {
+    background-color: #2563eb; /* Blue 600 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: translateY(-1px);
+}
+
+/* Focus states */
+.navbar-item button:focus,
+.navbar-item a:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Mobile spacing */
+@media (max-width: 768px) {
+    .navbar-item {
+        margin: 8px 0;
+    }
+}
 .btn-primary:is(:hover, :focus) {
   --background: var(--salmon);
   --border-color: var(--salmon);
@@ -591,6 +663,7 @@ body {
   font-weight: var(--fw-500);
   border: 1px solid var(--gainsboro);
   border-radius: 30px;
+  background-color: var(--gainsboro);
 }
 
 .filter-btn.active {
