@@ -10,11 +10,8 @@
     <!--
     - favicon
   -->
-    <link rel="shortcut icon" href="./assets/images/logo7.jpg" type="image/svg+xml">
-
-
-
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" href="{{ asset('assets/images/logo7.jpg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!--
     - google font link
@@ -65,7 +62,7 @@
         - #CTA
       -->
 
-            @include('home.cta')
+            {{-- @include('home.cta') --}}
             <!--
         - #SPECIAL
       -->

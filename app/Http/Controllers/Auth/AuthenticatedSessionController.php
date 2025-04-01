@@ -44,4 +44,10 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+    public function redirectTo()
+{
+    return Auth::user()->user_type === 'admin'
+        ? route('admin.index')
+        : route('dashboard.user');
+}
 }

@@ -7,10 +7,7 @@
             <h3 class="h2 card-title">Turf Tyres</h3>
 
           <div class="cta-card"
-            style="background-image: url('./assets/images/buy-club-car-accessories-colorado-golf-and-turf-loadstar-mercurywheels.jpg')">
-
-
-
+            style="background-image: url('{{ asset('assets/images/buy-club-car-accessories-colorado-golf-and-turf-loadstar-mercurywheels.jpg') }}')">
           </div>
           <p class="card-subtitle">Maxis Tyres</p>
 
@@ -26,11 +23,7 @@
             <h3 class="h2 card-title">Hydraulic motors</h3>
 
           <div class="cta-card"
-            style="background-image: url('./assets/images/category-parts.png')">
-
-
-
-
+            style="background-image: url('{{ asset('assets/images/category-parts.png') }}')">
           </div>
           <p class="card-subtitle">Engines</p>
           <a href="#special" class="btn btn-link">
@@ -44,4 +37,4 @@
       </ul>
 
     </div>
-  </section>
+</section>

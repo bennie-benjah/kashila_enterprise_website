@@ -37,27 +37,26 @@
                 </button>
             </form>
             <ul class="nav-action-list">
-                <!-- Login/Register always visible on Desktop -->
+                @auth
+                    <li>
+                        <a href="{{ route('wishlist') }}" class="nav-action-btn">
+                            <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+                            <span class="nav-action-text">Wishlist</span>
+                            <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
+                        </a>
+                    </li>
 
-
-                <li>
-                    <button class="nav-action-btn">
-                        <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-                        <span class="nav-action-text">Wishlist</span>
-                        <data class="nav-action-badge" value="5" aria-hidden="true">5</data>
-                    </button>
-                </li>
-
-                <li>
-                    <button class="nav-action-btn">
-                        <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
-                        <data class="nav-action-text" value="318.00">Basket: <strong>$318.00</strong></data>
-                        <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
-
-                    </button>
-                </li>
-
+                    <li>
+                        <a href="{{ route('cart') }}" class="nav-action-btn">
+                            <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+                            <data class="nav-action-text" value="318.00">Basket: <strong>$318.00</strong></data>
+                            <data class="nav-action-badge" value="4" aria-hidden="true">4</data>
+                        </a>
+                    </li>
+                @endauth
             </ul>
+
+
             <!-- Search Bar -->
 
         </nav>
