@@ -309,51 +309,24 @@
         grid-template-columns: 1fr;
       }
     }
-    /* Add these styles to your CSS */
-    .logout-item {
-        padding: 0;
-        margin: 0;
-    }
 
-    .logout-form {
-        display: block;
-        width: 100%;
-    }
+    .user-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+     /* Adds spacing between elements */
+}
 
-    .logout-button {
-        width: 100%;
-        text-align: left;
-        padding: 12px 15px;
-        background: none;
-        border: none;
-        color: inherit;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
+.logout-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px; /* Adjust as needed */
+}
 
-    .logout-button:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
+.action-btn {
+    margin: 10px; /* Adds space between buttons */
+}
 
-    .logout-button i {
-        margin-right: 10px;
-        width: 20px;
-    }
-    toastr.options = {
-        "closeButton": true,
-        "debug": false,
-        "newestOnTop": false,
-        "progressBar": true,
-        "positionClass": "toast-top-right", // Change position if needed
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    };
+
   </style>

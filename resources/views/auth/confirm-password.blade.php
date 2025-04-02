@@ -10,16 +10,12 @@
     <!--
     - favicon
   -->
-    <link rel="shortcut icon" href="./assets/images/logo7.jpg" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo7.jpg" type="image/svg+xml') }}">
 
-    <head>
-        <!-- Other head elements -->
-
-    </head>
     <!--
     - custom css link
   -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!--
     - google font link

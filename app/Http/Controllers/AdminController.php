@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\User;
 use App\Models\Product;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -39,6 +40,22 @@ class AdminController extends Controller
         return redirect()->route('admin/dashboard')
                          ->with('success', 'Category added successfully!');
     }
+    public function updateCategory(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|unique:categories,name,' . $id,
+            'description' => 'nullable|string|max:1000',
+        ]);
+
+        $category = Category::findOrFail($id);
+        $category->update([
+            'name' => $request->name,
+            'description' => $request->description,
+        ]);
+
+        return redirect()->route('admin/dashboard')->with('success', 'Category updated successfully!');
+    }
+
     public function storeProduct(Request $request)
     {
         // Validate the form data
@@ -70,6 +87,42 @@ class AdminController extends Controller
         // Redirect back with success message
         return redirect()->route('admin/dashboard')->with('success', 'Product added successfully!');
     }
+    public function updateProduct(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'category_id' => 'required|exists:categories,id',
+        'price' => 'required|numeric|min:0',
+        'stock' => 'required|integer|min:0',
+        'description' => 'nullable|string|max:1000',
+        'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+    ]);
+
+    $product = Product::findOrFail($id);
+
+    if ($request->hasFile('image')) {
+        // Delete old image
+        if ($product->image && Storage::disk('public')->exists($product->image)) {
+            Storage::disk('public')->delete($product->image);
+        }
+
+        // Store new image
+        $product->image = $request->file('image')->store('product_images', 'public');
+    }
+
+    $product->update([
+        'name' => $request->name,
+        'category_id' => $request->category_id,
+        'price' => $request->price,
+        'stock' => $request->stock,
+        'description' => $request->description,
+        'image' => $product->image,
+    ]);
+
+    return redirect()->route('admin/dashboard')->with('success', 'Product updated successfully!');
+}
+
+
     public function destroy($id)
 {
     $product = Product::find($id);

@@ -41,6 +41,12 @@ Route::prefix('user')->middleware(['auth', 'verified', 'user'])->group(function 
     // Shopping features
     Route::get('/wishlist', [WishlistController::class, 'index'])->name('wishlist');
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
+    Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+    Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    Route::put('/cart/{id}', [CartController::class, 'update'])->name('cart.update');
+    Route::post('/wishlist/add', [WishlistController::class, 'addToWishlist'])->name('wishlist.add');
+    Route::delete('/wishlist/remove/{id}', [WishlistController::class, 'removeFromWishlist'])->name('wishlist.remove');
 });
 Route::get('/products/random', [HomeController::class, 'displayRandomProducts']);
 // Admin routes
@@ -51,5 +57,8 @@ Route::prefix('admin')->middleware(['auth', 'verified', 'admin'])->group(functio
     Route::post('/admin/products', [AdminController::class, 'storeProduct'])->name('admin.products.store');
     Route::delete('/products/{id}', [AdminController::class, 'destroy'])->name('products.destroy');
     Route::delete('/category/{id}', [AdminController::class, 'destroyCategory'])->name('category.destroy');
+    Route::put('/categories/{category}', [AdminController::class, 'updateCategory'])->name('categories.update');
+Route::put('/admin/products/{product}', [AdminController::class, 'updateProduct'])->name('admin.products.update');
+
 });
 require __DIR__.'/auth.php';

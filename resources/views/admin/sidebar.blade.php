@@ -20,15 +20,7 @@
         <h3>Settings</h3>
         <ul>
             <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
-            <li class="logout-item">
-                <form action="{{ route('logout') }}" method="POST" class="logout-form">
-                    @csrf
-                    <button type="submit" class="logout-button">
-                        <i class="fas fa-sign-out-alt"></i>
-                        <span>Logout</span>
-                    </button>
-                </form>
-            </li>
+
         </ul>
     </div>
 </div>

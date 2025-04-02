@@ -1,11 +1,19 @@
 <div class="main-content">
     <div class="header">
-      <h1>Dashboard</h1>
-      <div class="user-actions">
-        <span>Welcome, Admin</span>
-        <img src="./image/logo7.jpg" alt="User" class="user-img">
-      </div>
+        <h1>Dashboard</h1>
+        <div class="user-actions">
+            <span>Welcome, Admin</span><br>
+            <form action="{{ route('logout') }}" method="POST" class="logout-form">
+                @csrf
+                <button type="submit" class="btn btn-danger">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </form>
+
+        </div>
     </div>
+
 
     <!-- Stats Cards -->
     <div class="cards">
@@ -65,9 +73,13 @@
                             @method('DELETE')
                             <button type="submit" class="action-btn delete-btn">
                                 <i class="fas fa-trash"></i>
-                            </button>
+                            </button><br>
                         </form>
+                        <button class="action-btn edit-btn" onclick="openEditCategoryModal()">
+                            <i class="fas fa-edit"></i>
+                        </button>
                     </td>
+
                 </tr>
             @endforeach
         </tbody>
@@ -111,9 +123,13 @@
                     @method('DELETE')
                     <button type="submit" class="action-btn delete-btn">
                         <i class="fas fa-trash"></i>
-                    </button>
+                    </button><br>
                 </form>
+                <button class="action-btn edit-btn" onclick="openEditProductModal()">
+                    <i class="fas fa-edit"></i>
+                </button>
             </td>
+
           </tr>
         @endforeach
       </tbody>
@@ -144,10 +160,10 @@
                     <td>{{ $user->email }}</td>
                     <td>{{ ucfirst($user->user_type) }}</td> <!-- Assuming 'user_type' column holds roles -->
                     <td>{{ $user->created_at->format('Y-m-d') }}</td>
-                    <td>
+                    {{-- <td>
                         <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
                         <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
-                    </td>
+                    </td> --}}
                 </tr>
             @endforeach
         </tbody>
